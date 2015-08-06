@@ -21,21 +21,13 @@
   });
 
   $app->post("/Place_Info", function() use ($app){
-        $place = new Places($_POST['Place_Name'],$_POST['Stay_Time']);
+  $place = new Places($_POST['Place_Name'],$_POST['Stay_Time']);
         $place->save();
         return $app['twig']->render('create_place.html.twig',
           array('newplace' => $place ));
 
 
   });
-
-  $app->post("/delete_places", function() use($app){
-
-      Task::deleteAll();
-
-      return $app['twig']->render('delete_places.html.twig');
-  });
-
 
 
 

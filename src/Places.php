@@ -18,7 +18,7 @@
     function setCityName($new_city)
     {
 
-      $this->city_name = $new_city;
+      $this->city_name = (string) $new_city;
 
     }
 
@@ -31,7 +31,7 @@
 
     function setStayTime($new_time)
     {
-      $this->stay_time = $new_time;
+      $this->stay_time = (string) $new_time;
 
     }
 
@@ -49,11 +49,6 @@
     static function getAll()
     {
       return $_SESSION['list_of_city_info'];
-    }
-
-    static function deleteAll()
-    {
-      $_SESSION['list_of_city_info'] = array();
     }
 
   }

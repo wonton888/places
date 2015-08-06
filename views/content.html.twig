@@ -2,6 +2,20 @@
 <head>Where have you been?</head>
   <body>
 
+      {% if content is not empty %}
+        <p>Here are all your tasks:</p>
+
+        <ul>
+          {% for place in content %}
+              <li>{{place.getCityName}}</li>
+          {% endfor %}
+
+
+        </ul>
+
+    {% endif %}
+
+
     <form action='/Place_Info' method='post'>
 
       <label for='Place_Name'>Name of Place:</label>
@@ -14,7 +28,6 @@
 
     </form>
 
-      <form action='/delete_places' method='post'>
-        <button type='submit'>clear</button>
+
   </body>
 </html>
